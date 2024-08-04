@@ -16,7 +16,7 @@ const Book = ({book}) => {
         if(mountedRef.current){
           setImg(image)
         }
-      },500)
+      },0)
     }
     return () => {
       // When the component unmounts 
@@ -25,8 +25,9 @@ const Book = ({book}) => {
   }, [book.url])
   return ( 
     <div className="book">
-      { img ? 
-        (<>
+      {/* { img ? 
+        ( */}
+        <>
         <Link to={`/books/${book.id}`}>
         <figure className="book__img--wrapper">
         <img src={book.url} alt="" className="book__img"/>
@@ -39,17 +40,18 @@ const Book = ({book}) => {
         <Ratings rating={book.rating} />
         <Price salePrice={book.salePrice} originalPrice={book.originalPrice}/>
       </Link>
-      </>)
-      : 
-        (
-        <>
+      </>
+      {/* ) */}
+      {/* : 
+        ( */}
+        {/* <>
         <div className="book__img--skeleton"></div>
         <div className="skeleton book__title--skeleton"></div>
         <div className="skeleton book__rating--skeleton"></div>
         <div className="skeleton book__price--skeleton"></div>
-        </>
-        )
-    }
+        </> */}
+        {/* )
+    } */}
 </div>
 )
 }
